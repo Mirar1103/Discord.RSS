@@ -144,9 +144,7 @@ class Client {
   }
 
   listenToShardedEvents (bot) {
-    process.on("guildMemberAdd", member => {
-      commands(bot, member);
-    })
+
     process.on('message', message => {
       if (!message._drss) return
       switch (message.type) {
