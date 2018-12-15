@@ -6,14 +6,14 @@
     "failedFeeds": true
   },
   "bot": {
-    "token": "",
+    //"token": process.env.token,
     "enableCommands": true,
     "prefix": "~",
     "status": "online",
     "activityType": "",
     "activityName": "",
     "streamActivityURL": "",
-    "controllerIds": [""],
+    "controllerIds": ["181812974778843137"],
     "menuColor": 5285609,
     "deleteMenus": false,
     "commandAliases": {}
