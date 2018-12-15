@@ -5,7 +5,6 @@ const config = require('../config.json')
 const storage = require('./storage.js')
 const pageControls = require('./pageControls.js')
 const EVENT_HANDLERS = {
-  guildMemberAdd: guildMemberAddHandler,
   guildCreate: guildCreateHandler,
   guildDelete: guildDeleteHandler,
   channelDelete: channelDeleteHandler,
@@ -35,9 +34,7 @@ if (fs.existsSync('./settings/commands.js')) {
 function guildCreateHandler (guild) {
   eventHandler('guildCreate')(storage.bot, guild)
 }
-function guildMemberAddHandler (member) {
-  eventHandler('guildMemberAdd')(storage.bot, guild)
-}
+
 
 function guildDeleteHandler (guild) {
   eventHandler('guildDelete')(storage.bot, guild)
