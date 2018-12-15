@@ -10,6 +10,7 @@ const log = require('../util/logger.js')
 const dbOps = require('../util/dbOps.js')
 const configCheck = require('../util/configCheck.js')
 const connectDb = require('../rss/db/connect.js')
+const commands = require('../settings/commands.js')
 const ClientSharded = require('./ClientSharded.js')
 const DISABLED_EVENTS = ['TYPING_START', 'MESSAGE_DELETE', 'MESSAGE_UPDATE', 'PRESENCE_UPDATE', 'VOICE_STATE_UPDATE', 'VOICE_SERVER_UPDATE', 'USER_NOTE_UPDATE', 'CHANNEL_PINS_UPDATE']
 const SHARDED_OPTIONS = { respawn: false }
@@ -143,6 +144,9 @@ class Client {
   }
 
   listenToShardedEvents (bot) {
+    process.on("guildMemberAdd", member => {
+
+    })
     process.on('message', message => {
       if (!message._drss) return
       switch (message.type) {
